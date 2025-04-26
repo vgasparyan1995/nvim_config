@@ -126,6 +126,7 @@ vim.api.nvim_set_keymap('v', '<S-k>', ":m '<-2<cr>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>tt', ":botright split | term<cr>i", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>r', "<cmd>.w !bash<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>jf', '<cmd>%!jq .<cr>', { noremap = true})
 
 vim.cmd[[colorscheme tokyonight-night]]
 
