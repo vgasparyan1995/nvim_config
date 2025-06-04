@@ -50,12 +50,12 @@ require("lazy").setup({
       },
     },
 
-    -- LSP stuff
     {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
+    {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
     {
       'neovim/nvim-lspconfig',
       lazy = false,
@@ -100,6 +100,13 @@ require("lazy").setup({
         }
       end,
     },
+    {
+      "nvim-telescope/telescope.nvim",
+      tag = '0.1.8',
+      dependencies = {
+        "nvim-lua/plenary.nvim"
+      }
+    },
 
   },
 
@@ -127,6 +134,8 @@ vim.api.nvim_set_keymap('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>tt', ":botright split | term<cr>i", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>r', "<cmd>.w !bash<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>jf', '<cmd>%!jq .<cr>', { noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true})
 
 vim.cmd[[colorscheme tokyonight-night]]
 
