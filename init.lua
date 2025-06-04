@@ -107,6 +107,15 @@ require("lazy").setup({
         "nvim-lua/plenary.nvim"
       }
     },
+    {
+      'huggingface/llm.nvim',
+      opts = {
+        backend = "ollama",
+        model = "gemma3:1b-it-qat",
+        url = "http://127.0.0.1:11434",
+        enable_suggestions_on_startup = false,
+      }
+    }
 
   },
 
