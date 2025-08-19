@@ -137,6 +137,7 @@ vim.opt.guicursor = {
 
 vim.api.nvim_set_keymap('n', 'j', "gj", { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', "gk", { noremap = true })
+vim.api.nvim_set_keymap('v', 'p', '"_dP', { noremap = true })
 vim.api.nvim_set_keymap('v', '<S-j>', ":m '>+1<cr>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('v', '<S-k>', ":m '<-2<cr>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
