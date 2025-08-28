@@ -55,7 +55,8 @@ require("lazy").setup({
     {'williamboman/mason-lspconfig.nvim'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
-    {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+    {'sindrets/diffview.nvim'}, 
+    {'nvim-treesitter/nvim-treesitter', branch = 'master', lazy = false, build = ":TSUpdate"},
     {
       'neovim/nvim-lspconfig',
       lazy = false,
@@ -135,6 +136,7 @@ vim.opt.guicursor = {
   "i-n-v-c-sm:block-Cursor/lCursor",
 }
 
+vim.api.nvim_del_keymap('n', '<Tab>')
 vim.api.nvim_set_keymap('n', 'j', "gj", { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', "gk", { noremap = true })
 vim.api.nvim_set_keymap('v', 'p', '"_dP', { noremap = true })
@@ -199,6 +201,7 @@ require('mason-lspconfig').setup({
     end,
   },
 })
+require('lspconfig').ts_ls.setup({})
 -----------------------
 -----------------------
 -----------------------
