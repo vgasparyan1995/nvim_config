@@ -201,7 +201,6 @@ require('mason-lspconfig').setup({
     end,
   },
 })
-require('lspconfig').ts_ls.setup({})
 -----------------------
 -----------------------
 -----------------------
