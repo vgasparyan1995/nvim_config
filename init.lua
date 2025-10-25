@@ -55,6 +55,7 @@ require("lazy").setup({
     {'williamboman/mason-lspconfig.nvim'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
+    {'sindrets/diffview.nvim'}, 
     {'nvim-treesitter/nvim-treesitter', branch = 'master', lazy = false, build = ":TSUpdate"},
     {
       'neovim/nvim-lspconfig',
@@ -147,7 +148,6 @@ vim.api.nvim_set_keymap('n', '<leader>r', "<cmd>.w !bash<cr>", { noremap = true 
 vim.api.nvim_set_keymap('n', '<leader>jf', '<cmd>%!jq .<cr>', { noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true})
-vim.api.nvim_set_keymap('c', '<Tab>', '<C-l>', { noremap = true })
 
 vim.cmd[[colorscheme tokyonight-night]]
 
@@ -196,11 +196,12 @@ require('mason-lspconfig').setup({
           },
         })
       else
-        vim.lsp.config[server_name].setup({})
+        require('lspconfig')[server_name].setup({})
       end
     end,
   },
 })
+require('lspconfig').ts_ls.setup({})
 -----------------------
 -----------------------
 -----------------------
