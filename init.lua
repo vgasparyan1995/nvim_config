@@ -143,6 +143,7 @@ vim.opt.guicursor = {
   "i-n-v-c-sm:block-Cursor/lCursor",
 }
 
+vim.api.nvim_create_autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 vim.api.nvim_del_keymap('n', '<Tab>')
 vim.api.nvim_set_keymap('n', 'j', "gj", { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', "gk", { noremap = true })
@@ -150,7 +151,7 @@ vim.api.nvim_set_keymap('v', 'p', '"_dP', { noremap = true })
 vim.api.nvim_set_keymap('v', '<S-j>', ":m '>+1<cr>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('v', '<S-k>', ":m '<-2<cr>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>tt', ":botright split | term<cr>i", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>tt', ":botright split | term<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>r', "<cmd>.w !bash<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>jf', '<cmd>%!jq .<cr>', { noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true})
