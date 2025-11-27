@@ -139,6 +139,8 @@ vim.opt.relativenumber = true
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
+vim.opt.foldmethod = "syntax"
+vim.opt.foldlevel = 99
 vim.opt.guicursor = {
   "i-n-v-c-sm:block-Cursor/lCursor",
 }
