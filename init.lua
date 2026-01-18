@@ -113,7 +113,15 @@ require("lazy").setup({
       tag = '0.1.8',
       dependencies = {
         "nvim-lua/plenary.nvim"
-      }
+      },
+      config = function()
+        require("telescope").setup({
+          defaults = {
+            hidden = true,
+            no_ignore = true,
+          }
+        })
+      end,
     },
     {
       'huggingface/llm.nvim',
