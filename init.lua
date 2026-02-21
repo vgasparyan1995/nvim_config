@@ -131,6 +131,26 @@ require("lazy").setup({
         url = "http://127.0.0.1:11434",
         enable_suggestions_on_startup = false,
       }
+    },
+    {
+      "nvimtools/hydra.nvim",
+      config = function()
+        local Hydra = require("hydra")
+
+        Hydra({
+          name = "Window Resize",
+          mode = "n",
+          body = "<C-w>r",
+          heads = {
+            { "j", "<C-w>+" },
+            { "k", "<C-w>-" },
+            { "h", "<C-w><" },
+            { "l", "<C-w>>" },
+            { "<Esc>", nil, { exit = true } },
+            { "<CR>", nil, { exit = true } },
+          }
+        })
+      end
     }
 
   },
