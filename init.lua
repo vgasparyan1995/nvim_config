@@ -151,6 +151,10 @@ require("lazy").setup({
           }
         })
       end
+    },
+    {
+      "OXY2DEV/markview.nvim",
+      lazy = false,
     }
 
   },
@@ -187,6 +191,7 @@ vim.api.nvim_set_keymap('n', '<leader>r', "<cmd>.w !bash<cr>", { noremap = true 
 vim.api.nvim_set_keymap('n', '<leader>jf', '<cmd>%!jq .<cr>', { noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>mm', '<cmd>Markview<cr>', { noremap = true})
 vim.keymap.set('n', '<leader>gf', find_file_under_cursor, { noremap = true, silent = true })
 
 vim.cmd[[colorscheme tokyonight-night]]
